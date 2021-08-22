@@ -15,7 +15,7 @@ function print_average () {
     }
     END {
       for(i=2; i<=NF; i++) {
-          printf "%s%s", sums[i]/(NR-1), (i==NF?ORS:OFS)
+          printf "%.2f%s", sums[i]/(NR-1), (i==NF?ORS:OFS)
       }
     }' ${file_path} | column -t
     echo ""
