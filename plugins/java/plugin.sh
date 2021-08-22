@@ -10,7 +10,7 @@ function java_startup () {
   for ((i=0;i<${#JAVA_NAME[@]};i++))
   do
     date "+%Y %m %d %H %M %S" > ${WORK_DIR}/${JAVA_NAME[i]}.jstat.stime
-    ${JSTAT} -gc -t $(pgrep -f ${JAVA_PGREP[i]}) ${JAVA_INTERVAL} > ${WORK_DIR}/${JAVA_NAME[i]}.jstat &
+    ${JSTAT} -gc -t $(pgrep -f "${JAVA_PGREP[i]}") ${JAVA_INTERVAL} > ${WORK_DIR}/${JAVA_NAME[i]}.jstat &
     echo $! > ${WORK_DIR}/${JAVA_NAME[i]}.jstat.pid
   done
 }
