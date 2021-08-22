@@ -35,6 +35,9 @@ function system_collect () {
   # CPU
   system_collect_common_extract_detail "-P ALL" cpu.log
 
+  # CPC run-queue
+  system_collect_common -q cpu_runq.log
+
   # Memory utilization
   system_collect_common -r mem_util.log
 
